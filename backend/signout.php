@@ -1,0 +1,37 @@
+<?php
+
+$prevFolder = "../";
+include("../_intro.php");
+
+
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+}
+
+// If we have a remember-me cookie, delete only that token from DB
+if (!empty($_COOKIE['rememberme']) && strpos($_COOKIE['rememberme'], ':') !== false) {
+    list($selector, $token) = explode(':', $_COOKIE['rememberme'], 2);
+
+    $stmt = $mysqli->prepare("
+        DELETE FROM {$dbprefix}remember_me_tokens
+        WHERE selector = ?
+    ");
+    $stmt->bind_param("s", $selector);
+    $stmt->execute();
+
+    // Remove the cookie
+    setcookie("rememberme", "", time() - 3600, '/', '', true, true);
+}
+
+// Destroy session
+$_SESSION['user_id'] = "";
+unset($_SESSION['user_id']);
+session_destroy();
+
+// Redirect to homepage
+echo "
+    <script type='text/javascript'>
+        window.location = '".$MAIN_ROOT."';
+    </script>
+";
+?>
