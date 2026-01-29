@@ -24,8 +24,7 @@ A lightweight, community-first tournament platform:
 - Players can withdraw winnings to their own BSC wallet addresses; payouts are recorded on-chain.  
 - Each user may have an on-chain wallet address stored (optional). Platform keeps payout transaction logs for auditing.  
 - This feature is toggleable — can be enabled for events that have sponsored or donated prizes, or disabled if you prefer not to use on-chain payouts.  
-- Implementation notes (short): payouts are made via server-side transactions and recorded in the `transactions`/`payouts` logs; no card data or custodial payment rails are involved.  
-- Do not commit private keys or secrets into the repo.
+
 
 ## Philosophy
 Community-run. Minimal dependencies. Player-first. If you don’t know how to run a PHP project, this repo is not for you.
