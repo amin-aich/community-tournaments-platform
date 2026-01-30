@@ -1,4 +1,4 @@
-# community-tournaments
+# community-tournaments-platform
 
 Community-run single-elimination tournament platform built by players for players.  
 No corporate bullshit. No paywalls.
