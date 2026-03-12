@@ -1,5 +1,5 @@
 <?php
-// backend/signup.php - compatible with your current _intro.php
+// backend/signup.php
 include_once("../_intro.php");
 if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 @ini_set('display_errors', '0');
@@ -76,7 +76,7 @@ try {
     $mysqli->commit();
 
     // Verification disabled temperarelly
-	// set session email to allow verify page to work (no changes to _intro.php needed)
+	// set session email to allow verify page to work
     // $_SESSION['email'] = $email;
 	// send_json_local(['status'=>'verify','redirect'=>MAIN_ROOT . 'verify.php','message'=>'Account created. Please verify your email.']);
 	
@@ -88,7 +88,7 @@ try {
 	$wsToken = bin2hex(random_bytes(32));
 	$_SESSION['ws_token'] = $wsToken;
 
-	// update ip and ws_token in DB (best-effort)
+	// update ip and ws_token in DB
 	$ip = substr($_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? '', 0, 255);
 	$u = $mysqli->prepare("UPDATE {$dbprefix}members SET ipaddress = ?, ws_token = ? WHERE member_id = ?");
 	if ($u) { $u->bind_param('ssi', $ip, $wsToken, $row['member_id']); $u->execute(); $u->close(); }
