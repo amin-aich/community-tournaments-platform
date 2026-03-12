@@ -1,11 +1,11 @@
 <?php
-// backend/login.php - compatible with your current _intro.php
-include_once("../_intro.php"); // DO NOT modify _intro.php
+// backend/login.php
+include_once("../_intro.php");
 if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 
-// stop showing warnings in output (we'll still log server-side)
+// stop showing warnings in output (still log server-side)
 @ini_set('display_errors', '0');
-ob_start(); // capture any stray output so we can return clean JSON
+ob_start(); // capture any stray output to return clean JSON
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -92,12 +92,11 @@ $_SESSION['RememberMe'] = $rememberme ? 1 : 0;
 $wsToken = bin2hex(random_bytes(32));
 $_SESSION['ws_token'] = $wsToken;
 
-// update ip and ws_token in DB (best-effort)
+// update ip and ws_token in DB
 $ip = substr($_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? '', 0, 255);
 $u = $mysqli->prepare("UPDATE {$dbprefix}members SET ipaddress = ?, ws_token = ? WHERE member_id = ?");
 if ($u) { $u->bind_param('ssi', $ip, $wsToken, $row['member_id']); $u->execute(); $u->close(); }
 
-// remember-me (best-effort; table optional)
 if ($rememberme === 1) {
     if ($mysqli->query("SHOW TABLES LIKE 'remember_me_tokens'")->num_rows) {
         $selector = bin2hex(random_bytes(8));
