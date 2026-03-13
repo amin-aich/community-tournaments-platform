@@ -1,33 +1,55 @@
-# community-tournaments-platform
-
-Community-run single-elimination tournament platform built by players for players.  
-No corporate bullshit. No paywalls.
-
----
-
 ![Competitions](screenshots/competitions.PNG)
 
+# 🏆 Duel Masters — Community Tournament Platform
+
+This is the source code behind **[duelmasters.gamer.gd](https://duelmasters.gamer.gd)** — a free, community-run tournament platform built by fans, for fans.
+
+We publish our code openly so the community can see exactly how the platform works, report issues, and contribute improvements. No secrets, no black boxes.
+
 ---
 
-## What this repo is
-A lightweight, community-first tournament platform:
-- single-elimination brackets
-- participant check-in & match reporting
-- per-tournament live chat and notifications via Workerman 
+## 🌐 Want to play? Head to the site
 
-## Stack
-- PHP (backend)
-- MySQL (database)
-- Vanilla JavaScript SPA (frontend)
-- Workerman (WebSocket for live chat and notifications)
+👉 **[duelmasters.gamer.gd](https://duelmasters.gamer.gd)**
 
-## Rewards (BNB / BSC) - [Under Developement]
-- The rewards system is currently being expanded to bridge the platform with the Binance Smart Chain.
-- Integrated BNB Wallet: An integrated on-chain BSC wallet is actively under development to allow for seamless native interactions.
-- Direct Withdrawals: Once finalized, players can withdraw winnings directly to their BSC wallet addresses.
+This repo is just the code. To join tournaments, create an account, or hang out — go to the site.
 
-## Contributing
-PRs welcome. Keep changes focused and don’t commit secrets.
+---
+
+## 💬 Found a bug? Have an idea?
+
+Open an [issue](https://github.com/amin-aich/community-tournaments-platform/issues) and let us know. This platform is built around the community — your feedback actually matters here.
+
+---
+
+## 🤝 Want to contribute?
+
+You don't have to be a developer to help. You can:
+
+- 🐛 **Report bugs** — something broke? Tell us
+- 💡 **Suggest features** — open an issue with your idea
+- 🧑‍💻 **Submit a PR** — if you can code, fixes and improvements are welcome
+
+Keep changes focused. Don't try to make it commercial — this is and will stay a free fan project.
+
+---
+
+## ₿ Rewards System *(Coming Soon)*
+
+We're working on a Bitcoin-based rewards system so tournament winners can earn real prizes. No middleman, no platform cut — straight to your wallet.
+
+---
+
+## What's under the hood
+
+PHP · MySQL · Vanilla JS · Workerman WebSockets
+
+---
 
 ## License
-MIT
+
+MIT — the code is yours to read and learn from.
+
+---
+
+*Fan-made. Community-run. Free forever.*
