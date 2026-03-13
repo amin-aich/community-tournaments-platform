@@ -40,9 +40,15 @@ We're working on a Bitcoin-based rewards system so tournament winners can earn r
 
 ---
 
-## What's under the hood
+## Tech Stack
 
-PHP · MySQL · Vanilla JS · Workerman WebSockets
+Backend: PHP & MySQL (Robust, server-side logic)
+
+Real-time: Workerman WebSockets (Live match updates)
+
+Frontend: Vanilla JavaScript (Fast, framework-less UI)
+
+Philosophy: Minimal dependencies for maximum transparency.
 
 ---
 
